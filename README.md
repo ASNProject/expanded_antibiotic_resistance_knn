@@ -2,7 +2,7 @@
 
 ### Clone Project
 ```
-git clone https://github.com/ASNProject/granul-detection.git
+git clone https://github.com/ASNProject/expanded_antibiotic_resistance_knn.git
 ```
 
 ### Install Dependensi
