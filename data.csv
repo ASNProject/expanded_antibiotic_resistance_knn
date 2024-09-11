@@ -1,0 +1,101 @@
+Bacterial Strain,Antibiotic,Antibiotic Class,MIC (μg/mL),Resistance Level,Resistance Mechanism,Resistance Genes Present,Patient Age,Patient Gender,Comorbidities,Outcome,Location,Date of Collection,Dosage (mg/day),Treatment Duration (days),Hospitalization Status,Infection Type,Source of Infection,Previous Antibiotic Use
+S. aureus,Ciprofloxacin,Fluoroquinolone,1.0,Resistant,None,blaCTX-M,50,Female,Hypertension,Persistence,Surabaya,2023-12-29,429,11,No,Throat Infection,Hospital-Acquired,Yes
+P. aeruginosa,Ciprofloxacin,Beta-lactam,5.3,Intermediate,Efflux Pump,blaCTX-M,71,Female,Hypertension,Persistence,Jakarta,2023-02-12,843,6,No,Skin and Soft Tissue,Hospital-Acquired,Yes
+P. aeruginosa,Penicillin,Fluoroquinolone,7.3,Intermediate,Ribosomal Protection,-,36,Male,Hypertension,Recovery,Jakarta,2022-03-26,728,8,No,Pneumonia,Community-Acquired,Yes
+S. pyogenes,Levofloxacin,Tetracycline,4.3,Intermediate,Efflux Pump,blaKPC,19,Male,None,Recovery,Yogyakarta,2022-06-12,959,13,Yes,Urinary Tract Infection,Community-Acquired,Yes
+S. aureus,Amoxicillin,Beta-lactam,4.3,Susceptible,Enzyme Degradation,blaNDM,38,Female,Hypertension,Recovery,Jakarta,2022-10-23,626,10,Yes,Bloodstream Infection,Hospital-Acquired,Yes
+S. aureus,Levofloxacin,Tetracycline,2.1,Susceptible,Ribosomal Protection,-,66,Female,None,Recovery,Jakarta,2023-03-22,516,12,No,Urinary Tract Infection,Hospital-Acquired,Yes
+P. aeruginosa,Penicillin,Tetracycline,1.9,Resistant,None,mecA,48,Female,Hypertension,Recovery,Surabaya,2022-04-30,396,9,No,Bloodstream Infection,Community-Acquired,No
+E. coli,Levofloxacin,Fluoroquinolone,2.2,Susceptible,Enzyme Degradation,blaNDM,47,Male,None,Persistence,Surabaya,2022-06-07,917,7,Yes,Urinary Tract Infection,Community-Acquired,Yes
+S. aureus,Levofloxacin,Beta-lactam,0.7,Susceptible,Efflux Pump,blaCTX-M,76,Male,Diabetes,Persistence,Yogyakarta,2024-06-09,430,9,No,Skin and Soft Tissue,Community-Acquired,No
+S. pyogenes,Tetracycline,Tetracycline,2.8,Susceptible,Efflux Pump,blaNDM,39,Female,None,Persistence,Jakarta,2022-12-23,539,11,Yes,Skin and Soft Tissue,Community-Acquired,Yes
+S. aureus,Amoxicillin,Tetracycline,4.3,Resistant,Enzyme Degradation,blaCTX-M,57,Female,Diabetes,Persistence,Yogyakarta,2023-12-31,635,12,Yes,Urinary Tract Infection,Community-Acquired,Yes
+S. aureus,Amoxicillin,Tetracycline,3.1,Intermediate,Ribosomal Protection,mecA,76,Male,None,Recovery,Bandung,2023-03-17,668,13,Yes,Throat Infection,Hospital-Acquired,Yes
+S. aureus,Amoxicillin,Fluoroquinolone,6.3,Susceptible,Enzyme Degradation,mecA,57,Male,None,Persistence,Bandung,2024-04-06,504,9,No,Skin and Soft Tissue,Community-Acquired,No
+S. pyogenes,Tetracycline,Beta-lactam,4.7,Resistant,Enzyme Degradation,blaNDM,25,Female,Hypertension,Recovery,Jakarta,2024-08-24,883,9,No,Pneumonia,Hospital-Acquired,No
+S. aureus,Penicillin,Tetracycline,2.3,Susceptible,Enzyme Degradation,blaCTX-M,62,Male,Hypertension,Recovery,Yogyakarta,2023-06-30,559,9,Yes,Throat Infection,Community-Acquired,No
+P. aeruginosa,Amoxicillin,Beta-lactam,3.8,Resistant,Ribosomal Protection,blaKPC,76,Female,Diabetes,Recovery,Jakarta,2022-07-31,383,14,No,Bloodstream Infection,Community-Acquired,No
+P. aeruginosa,Tetracycline,Tetracycline,2.7,Susceptible,Efflux Pump,blaNDM,36,Male,Diabetes,Persistence,Bandung,2023-05-20,357,10,No,Pneumonia,Community-Acquired,No
+S. pyogenes,Tetracycline,Fluoroquinolone,5.1,Susceptible,Enzyme Degradation,blaCTX-M,27,Male,None,Persistence,Yogyakarta,2022-02-24,656,7,No,Pneumonia,Community-Acquired,No
+K. pneumoniae,Tetracycline,Tetracycline,0.6,Intermediate,Ribosomal Protection,mecA,39,Male,Hypertension,Persistence,Yogyakarta,2024-04-03,400,12,Yes,Bloodstream Infection,Hospital-Acquired,No
+E. coli,Amoxicillin,Beta-lactam,3.6,Intermediate,None,blaCTX-M,30,Male,Hypertension,Persistence,Surabaya,2023-01-03,340,11,Yes,Bloodstream Infection,Community-Acquired,Yes
+K. pneumoniae,Amoxicillin,Fluoroquinolone,2.4,Susceptible,None,blaCTX-M,76,Male,None,Persistence,Surabaya,2023-11-25,720,14,No,Pneumonia,Community-Acquired,No
+P. aeruginosa,Tetracycline,Tetracycline,2.1,Resistant,Efflux Pump,blaNDM,28,Female,None,Persistence,Jakarta,2022-05-17,510,7,No,Pneumonia,Hospital-Acquired,No
+P. aeruginosa,Penicillin,Tetracycline,7.9,Resistant,Ribosomal Protection,blaNDM,67,Male,None,Persistence,Bandung,2024-05-13,356,8,Yes,Skin and Soft Tissue,Community-Acquired,No
+E. coli,Penicillin,Fluoroquinolone,1.6,Susceptible,None,mecA,51,Male,Hypertension,Recovery,Yogyakarta,2023-06-22,741,8,No,Throat Infection,Community-Acquired,No
+S. pyogenes,Tetracycline,Tetracycline,1.2,Susceptible,Efflux Pump,mecA,19,Male,Hypertension,Persistence,Jakarta,2024-05-14,902,5,Yes,Urinary Tract Infection,Community-Acquired,Yes
+E. coli,Penicillin,Tetracycline,6.6,Intermediate,Efflux Pump,blaKPC,76,Female,Hypertension,Persistence,Surabaya,2024-08-30,374,13,No,Pneumonia,Community-Acquired,No
+S. aureus,Levofloxacin,Tetracycline,4.5,Intermediate,Ribosomal Protection,blaCTX-M,73,Female,Diabetes,Recovery,Yogyakarta,2022-05-17,424,6,No,Skin and Soft Tissue,Community-Acquired,Yes
+E. coli,Levofloxacin,Beta-lactam,5.9,Susceptible,None,blaKPC,73,Female,Hypertension,Persistence,Yogyakarta,2022-02-11,478,5,Yes,Skin and Soft Tissue,Community-Acquired,Yes
+S. aureus,Levofloxacin,Beta-lactam,7.2,Resistant,None,mecA,51,Female,Hypertension,Recovery,Bandung,2022-06-14,899,8,Yes,Throat Infection,Community-Acquired,No
+S. aureus,Ciprofloxacin,Beta-lactam,1.2,Intermediate,Efflux Pump,blaKPC,27,Male,None,Persistence,Surabaya,2024-04-18,528,8,Yes,Skin and Soft Tissue,Hospital-Acquired,Yes
+S. pyogenes,Levofloxacin,Fluoroquinolone,5.7,Resistant,None,-,32,Female,Diabetes,Persistence,Bandung,2022-01-25,914,10,No,Urinary Tract Infection,Community-Acquired,Yes
+S. aureus,Ciprofloxacin,Beta-lactam,1.3,Resistant,Ribosomal Protection,mecA,52,Female,None,Recovery,Yogyakarta,2022-10-28,450,10,Yes,Bloodstream Infection,Hospital-Acquired,Yes
+P. aeruginosa,Penicillin,Fluoroquinolone,4.0,Susceptible,Ribosomal Protection,mecA,53,Female,None,Persistence,Surabaya,2022-10-06,600,6,Yes,Throat Infection,Hospital-Acquired,Yes
+K. pneumoniae,Amoxicillin,Fluoroquinolone,6.7,Susceptible,Enzyme Degradation,blaCTX-M,23,Male,Hypertension,Recovery,Bandung,2022-07-28,952,12,No,Throat Infection,Hospital-Acquired,Yes
+S. pyogenes,Tetracycline,Fluoroquinolone,3.6,Resistant,None,mecA,25,Female,Diabetes,Persistence,Bandung,2024-05-22,520,6,No,Skin and Soft Tissue,Hospital-Acquired,No
+S. aureus,Amoxicillin,Fluoroquinolone,7.2,Resistant,Efflux Pump,-,32,Female,Hypertension,Persistence,Jakarta,2022-05-20,728,7,No,Urinary Tract Infection,Community-Acquired,No
+E. coli,Penicillin,Beta-lactam,5.5,Resistant,Efflux Pump,blaNDM,70,Male,None,Recovery,Jakarta,2022-06-28,632,14,No,Skin and Soft Tissue,Hospital-Acquired,Yes
+E. coli,Tetracycline,Fluoroquinolone,4.6,Susceptible,None,-,45,Female,Hypertension,Recovery,Bandung,2024-01-10,658,6,Yes,Urinary Tract Infection,Community-Acquired,No
+S. aureus,Penicillin,Fluoroquinolone,0.5,Intermediate,Enzyme Degradation,blaKPC,66,Male,None,Recovery,Surabaya,2024-03-04,381,12,No,Pneumonia,Hospital-Acquired,No
+K. pneumoniae,Tetracycline,Fluoroquinolone,5.3,Resistant,None,-,74,Female,None,Recovery,Yogyakarta,2022-01-28,729,11,Yes,Bloodstream Infection,Hospital-Acquired,No
+K. pneumoniae,Ciprofloxacin,Beta-lactam,7.4,Intermediate,Ribosomal Protection,-,25,Female,Hypertension,Persistence,Jakarta,2023-01-26,942,13,Yes,Bloodstream Infection,Hospital-Acquired,No
+S. pyogenes,Amoxicillin,Tetracycline,2.4,Intermediate,Enzyme Degradation,blaCTX-M,80,Male,Diabetes,Recovery,Jakarta,2023-08-01,600,13,No,Skin and Soft Tissue,Hospital-Acquired,No
+K. pneumoniae,Levofloxacin,Beta-lactam,3.6,Resistant,None,blaNDM,57,Male,Hypertension,Persistence,Surabaya,2024-01-17,790,11,Yes,Skin and Soft Tissue,Hospital-Acquired,No
+K. pneumoniae,Amoxicillin,Tetracycline,1.5,Intermediate,Enzyme Degradation,blaNDM,32,Male,None,Persistence,Jakarta,2023-05-14,389,5,Yes,Pneumonia,Hospital-Acquired,Yes
+S. pyogenes,Ciprofloxacin,Beta-lactam,4.0,Resistant,Efflux Pump,mecA,56,Female,Hypertension,Persistence,Jakarta,2022-12-03,903,5,No,Throat Infection,Hospital-Acquired,No
+E. coli,Penicillin,Beta-lactam,5.8,Susceptible,Efflux Pump,blaCTX-M,76,Female,Diabetes,Persistence,Surabaya,2022-04-23,893,10,No,Throat Infection,Hospital-Acquired,No
+S. aureus,Tetracycline,Tetracycline,3.9,Resistant,None,-,40,Female,Diabetes,Persistence,Surabaya,2024-02-03,422,7,Yes,Urinary Tract Infection,Hospital-Acquired,No
+S. pyogenes,Ciprofloxacin,Fluoroquinolone,7.2,Susceptible,Enzyme Degradation,blaKPC,69,Male,Hypertension,Persistence,Bandung,2022-09-26,656,10,No,Urinary Tract Infection,Community-Acquired,No
+S. pyogenes,Tetracycline,Beta-lactam,3.9,Resistant,Enzyme Degradation,-,72,Female,Hypertension,Recovery,Jakarta,2023-06-28,353,8,No,Urinary Tract Infection,Community-Acquired,No
+K. pneumoniae,Tetracycline,Beta-lactam,2.0,Resistant,None,mecA,25,Female,None,Recovery,Jakarta,2023-12-02,265,13,Yes,Bloodstream Infection,Community-Acquired,No
+S. pyogenes,Ciprofloxacin,Beta-lactam,6.5,Resistant,Enzyme Degradation,mecA,46,Female,None,Recovery,Yogyakarta,2024-04-23,605,10,No,Bloodstream Infection,Community-Acquired,No
+K. pneumoniae,Ciprofloxacin,Tetracycline,3.1,Resistant,None,mecA,25,Male,Diabetes,Persistence,Jakarta,2022-10-23,333,10,No,Urinary Tract Infection,Community-Acquired,Yes
+E. coli,Penicillin,Fluoroquinolone,4.5,Susceptible,Efflux Pump,blaKPC,32,Female,Diabetes,Persistence,Jakarta,2024-02-10,262,8,Yes,Urinary Tract Infection,Hospital-Acquired,Yes
+S. pyogenes,Penicillin,Tetracycline,5.2,Intermediate,Ribosomal Protection,blaCTX-M,21,Female,None,Recovery,Jakarta,2022-03-26,973,7,Yes,Urinary Tract Infection,Hospital-Acquired,Yes
+S. pyogenes,Ciprofloxacin,Tetracycline,3.9,Intermediate,None,blaNDM,66,Female,Hypertension,Recovery,Bandung,2022-04-08,824,5,No,Throat Infection,Hospital-Acquired,No
+P. aeruginosa,Ciprofloxacin,Tetracycline,2.2,Resistant,Ribosomal Protection,mecA,75,Male,Hypertension,Persistence,Surabaya,2023-10-22,338,13,Yes,Throat Infection,Hospital-Acquired,No
+K. pneumoniae,Tetracycline,Fluoroquinolone,5.0,Intermediate,Enzyme Degradation,blaKPC,38,Male,Hypertension,Persistence,Surabaya,2022-01-02,385,13,Yes,Skin and Soft Tissue,Community-Acquired,No
+K. pneumoniae,Tetracycline,Fluoroquinolone,2.0,Susceptible,None,blaCTX-M,66,Female,Hypertension,Persistence,Bandung,2023-05-20,567,7,Yes,Throat Infection,Community-Acquired,No
+E. coli,Tetracycline,Tetracycline,6.7,Intermediate,Enzyme Degradation,mecA,76,Male,None,Recovery,Yogyakarta,2022-12-07,463,10,Yes,Urinary Tract Infection,Community-Acquired,No
+P. aeruginosa,Ciprofloxacin,Beta-lactam,3.3,Resistant,None,mecA,37,Male,Diabetes,Persistence,Bandung,2023-06-09,909,13,No,Urinary Tract Infection,Hospital-Acquired,Yes
+K. pneumoniae,Penicillin,Fluoroquinolone,0.9,Susceptible,Ribosomal Protection,-,74,Male,Hypertension,Recovery,Jakarta,2024-06-25,954,9,No,Bloodstream Infection,Community-Acquired,Yes
+P. aeruginosa,Amoxicillin,Fluoroquinolone,7.0,Susceptible,Enzyme Degradation,blaKPC,35,Male,Diabetes,Recovery,Yogyakarta,2022-03-29,332,13,No,Throat Infection,Community-Acquired,Yes
+S. aureus,Levofloxacin,Tetracycline,0.8,Intermediate,Ribosomal Protection,mecA,53,Male,None,Recovery,Bandung,2023-01-25,917,14,No,Bloodstream Infection,Community-Acquired,No
+P. aeruginosa,Levofloxacin,Fluoroquinolone,4.1,Resistant,Efflux Pump,blaNDM,54,Female,Hypertension,Recovery,Surabaya,2023-06-01,519,8,No,Bloodstream Infection,Community-Acquired,Yes
+S. pyogenes,Ciprofloxacin,Beta-lactam,2.1,Susceptible,None,-,55,Female,Diabetes,Recovery,Jakarta,2023-03-07,454,7,Yes,Urinary Tract Infection,Hospital-Acquired,No
+S. pyogenes,Amoxicillin,Tetracycline,7.0,Intermediate,Efflux Pump,blaCTX-M,44,Male,Diabetes,Recovery,Bandung,2022-04-27,615,12,No,Skin and Soft Tissue,Hospital-Acquired,Yes
+K. pneumoniae,Ciprofloxacin,Tetracycline,3.1,Resistant,Efflux Pump,blaNDM,48,Male,Diabetes,Recovery,Yogyakarta,2023-01-03,295,6,No,Urinary Tract Infection,Community-Acquired,Yes
+E. coli,Levofloxacin,Tetracycline,7.6,Intermediate,None,blaNDM,59,Female,Hypertension,Persistence,Surabaya,2023-12-28,898,7,No,Throat Infection,Hospital-Acquired,No
+P. aeruginosa,Amoxicillin,Beta-lactam,7.9,Resistant,None,blaKPC,30,Male,None,Recovery,Bandung,2024-03-22,814,12,Yes,Skin and Soft Tissue,Hospital-Acquired,No
+P. aeruginosa,Amoxicillin,Fluoroquinolone,7.0,Susceptible,Ribosomal Protection,blaKPC,66,Female,Hypertension,Recovery,Surabaya,2023-11-21,992,5,No,Urinary Tract Infection,Community-Acquired,Yes
+K. pneumoniae,Amoxicillin,Beta-lactam,1.4,Intermediate,None,-,18,Female,Hypertension,Recovery,Yogyakarta,2024-04-10,265,13,No,Urinary Tract Infection,Community-Acquired,No
+S. aureus,Ciprofloxacin,Tetracycline,5.4,Susceptible,Ribosomal Protection,blaCTX-M,42,Female,Hypertension,Recovery,Yogyakarta,2022-10-31,504,13,No,Throat Infection,Community-Acquired,Yes
+S. pyogenes,Tetracycline,Beta-lactam,4.3,Susceptible,Enzyme Degradation,blaNDM,79,Female,Hypertension,Persistence,Surabaya,2022-07-18,508,6,No,Urinary Tract Infection,Hospital-Acquired,Yes
+P. aeruginosa,Tetracycline,Beta-lactam,3.0,Resistant,Enzyme Degradation,mecA,47,Female,Diabetes,Recovery,Surabaya,2023-12-17,912,5,No,Urinary Tract Infection,Community-Acquired,Yes
+K. pneumoniae,Ciprofloxacin,Beta-lactam,7.0,Susceptible,None,blaCTX-M,32,Male,None,Recovery,Jakarta,2022-01-14,744,12,Yes,Pneumonia,Hospital-Acquired,Yes
+E. coli,Levofloxacin,Fluoroquinolone,5.5,Resistant,Efflux Pump,blaNDM,43,Male,None,Recovery,Yogyakarta,2022-11-11,328,7,No,Urinary Tract Infection,Community-Acquired,No
+P. aeruginosa,Amoxicillin,Tetracycline,6.2,Resistant,Enzyme Degradation,blaCTX-M,49,Male,Hypertension,Recovery,Jakarta,2022-12-28,870,7,Yes,Bloodstream Infection,Community-Acquired,No
+S. aureus,Penicillin,Beta-lactam,6.4,Susceptible,Enzyme Degradation,blaKPC,45,Female,Diabetes,Recovery,Jakarta,2024-04-17,985,13,Yes,Throat Infection,Community-Acquired,Yes
+S. aureus,Penicillin,Tetracycline,6.5,Susceptible,Enzyme Degradation,mecA,59,Female,None,Recovery,Surabaya,2024-04-18,428,7,Yes,Skin and Soft Tissue,Hospital-Acquired,No
+E. coli,Amoxicillin,Tetracycline,0.9,Susceptible,None,blaCTX-M,58,Male,Hypertension,Persistence,Surabaya,2022-02-18,489,14,Yes,Pneumonia,Hospital-Acquired,Yes
+S. pyogenes,Penicillin,Beta-lactam,5.1,Susceptible,Ribosomal Protection,blaNDM,62,Male,None,Recovery,Bandung,2024-04-30,609,14,No,Skin and Soft Tissue,Hospital-Acquired,Yes
+P. aeruginosa,Penicillin,Fluoroquinolone,1.5,Intermediate,Enzyme Degradation,blaCTX-M,63,Female,Hypertension,Persistence,Bandung,2022-12-01,271,8,Yes,Pneumonia,Community-Acquired,No
+K. pneumoniae,Penicillin,Tetracycline,2.8,Susceptible,Enzyme Degradation,-,74,Male,Diabetes,Recovery,Bandung,2024-08-19,436,11,Yes,Skin and Soft Tissue,Hospital-Acquired,Yes
+E. coli,Amoxicillin,Beta-lactam,7.4,Intermediate,None,blaNDM,79,Female,Hypertension,Persistence,Jakarta,2023-03-05,801,14,No,Urinary Tract Infection,Community-Acquired,No
+P. aeruginosa,Penicillin,Tetracycline,2.0,Resistant,Ribosomal Protection,-,57,Male,Diabetes,Persistence,Bandung,2024-08-27,558,12,No,Urinary Tract Infection,Hospital-Acquired,Yes
+S. aureus,Tetracycline,Fluoroquinolone,3.1,Intermediate,Ribosomal Protection,mecA,54,Female,Hypertension,Recovery,Bandung,2024-01-25,410,5,No,Pneumonia,Community-Acquired,Yes
+E. coli,Ciprofloxacin,Fluoroquinolone,4.1,Resistant,None,mecA,77,Female,Hypertension,Recovery,Bandung,2023-09-20,776,13,No,Urinary Tract Infection,Hospital-Acquired,No
+P. aeruginosa,Amoxicillin,Tetracycline,2.5,Resistant,Ribosomal Protection,blaCTX-M,19,Male,None,Persistence,Jakarta,2023-08-08,561,5,Yes,Throat Infection,Community-Acquired,No
+P. aeruginosa,Ciprofloxacin,Fluoroquinolone,1.4,Intermediate,None,-,80,Female,Hypertension,Persistence,Surabaya,2022-01-06,785,13,No,Throat Infection,Community-Acquired,Yes
+S. aureus,Levofloxacin,Fluoroquinolone,6.7,Resistant,Enzyme Degradation,blaCTX-M,25,Male,Diabetes,Recovery,Surabaya,2022-04-21,378,9,Yes,Throat Infection,Hospital-Acquired,No
+P. aeruginosa,Tetracycline,Tetracycline,3.1,Resistant,Efflux Pump,-,21,Female,None,Persistence,Bandung,2024-05-02,826,8,No,Skin and Soft Tissue,Community-Acquired,No
+S. pyogenes,Tetracycline,Fluoroquinolone,5.3,Resistant,Efflux Pump,blaKPC,19,Female,None,Persistence,Jakarta,2023-11-01,301,9,Yes,Bloodstream Infection,Community-Acquired,Yes
+S. aureus,Ciprofloxacin,Beta-lactam,5.5,Intermediate,None,blaNDM,53,Male,Hypertension,Recovery,Bandung,2024-06-21,343,9,Yes,Pneumonia,Hospital-Acquired,No
+S. pyogenes,Penicillin,Fluoroquinolone,0.7,Resistant,Enzyme Degradation,-,62,Female,None,Persistence,Surabaya,2023-10-20,598,14,Yes,Bloodstream Infection,Community-Acquired,Yes
+S. aureus,Ciprofloxacin,Beta-lactam,6.3,Intermediate,Efflux Pump,mecA,70,Female,Diabetes,Recovery,Yogyakarta,2023-12-08,943,8,No,Pneumonia,Hospital-Acquired,Yes
+P. aeruginosa,Penicillin,Beta-lactam,7.3,Resistant,Enzyme Degradation,-,21,Female,None,Persistence,Yogyakarta,2024-05-06,374,14,No,Throat Infection,Community-Acquired,No
+P. aeruginosa,Penicillin,Fluoroquinolone,1.3,Resistant,None,mecA,28,Female,Hypertension,Persistence,Yogyakarta,2023-05-17,409,8,No,Throat Infection,Hospital-Acquired,Yes
+P. aeruginosa,Amoxicillin,Beta-lactam,6.9,Resistant,None,blaNDM,80,Female,Hypertension,Persistence,Surabaya,2022-09-30,978,5,Yes,Pneumonia,Community-Acquired,Yes
+K. pneumoniae,Penicillin,Fluoroquinolone,7.2,Susceptible,None,mecA,26,Male,Diabetes,Recovery,Jakarta,2023-09-03,972,13,Yes,Bloodstream Infection,Hospital-Acquired,No
+P. aeruginosa,Penicillin,Fluoroquinolone,5.9,Susceptible,Efflux Pump,-,53,Female,None,Persistence,Yogyakarta,2022-05-30,345,14,No,Skin and Soft Tissue,Community-Acquired,No
