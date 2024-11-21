@@ -1,8 +1,5 @@
 import tkinter as tk
 from knn import predict_outcome_knn
-from decision_tree import predict_outcome_decision_tree
-from random_forest import predict_outcome_random_forest
-
 
 # Fungsi untuk memproses input dan melakukan prediksi
 def run_prediction():

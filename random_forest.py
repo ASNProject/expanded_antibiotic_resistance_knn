@@ -1,53 +1,91 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import classification_report, confusion_matrix
 
-# Membaca data csv
+# 1. Load dataset
 data = pd.read_csv('data.csv')
+test_data = pd.read_csv('test.csv')
 
-# Preprocessing
-# Membuat LabelEncoder untuk masing-masing kolom kategorikal
-label_encoder_strain = LabelEncoder()
-label_encoder_antibiotic = LabelEncoder()
-label_encoder_mic = LabelEncoder()
+# 2. Combine the training and test datasets for encoding purposes
+combined_data = pd.concat([data[['Bacteria_Species', 'Antibiotic', 'Environment']], test_data[['Bacteria_Species', 'Antibiotic', 'Environment']]])
 
-# Mengubah kolom menjadi numerik
-data['Bacterial Strain'] = label_encoder_strain.fit_transform(data['Bacterial Strain'])
-data['Antibiotic'] = label_encoder_antibiotic.fit_transform(data['Antibiotic'])
-data['MIC (μg/mL)'] = label_encoder_mic.fit_transform(data['MIC (μg/mL)'])
+# 3. Initialize and fit the LabelEncoder on the combined data
+label_encoder = LabelEncoder()
+combined_data['Bacteria_Species'] = label_encoder.fit_transform(combined_data['Bacteria_Species'])
+combined_data['Antibiotic'] = label_encoder.fit_transform(combined_data['Antibiotic'])
+combined_data['Environment'] = label_encoder.fit_transform(combined_data['Environment'])
 
-# Fitur (X) dan target (y)
-X = data[['Bacterial Strain', 'Antibiotic', 'MIC (μg/mL)']]
-y = data['Outcome']
+# 4. Separate the combined data back into the training and test datasets
+data[['Bacteria_Species', 'Antibiotic', 'Environment']] = combined_data[['Bacteria_Species', 'Antibiotic', 'Environment']].iloc[:len(data)]
+test_data[['Bacteria_Species', 'Antibiotic', 'Environment']] = combined_data[['Bacteria_Species', 'Antibiotic', 'Environment']].iloc[len(data):]
 
-# Membagi dataset menjadi training dan testing
+# 5. Encode target variable (Resistance_Level) only in training data
+label_encoder_target = LabelEncoder()
+data['Resistance_Level'] = label_encoder_target.fit_transform(data['Resistance_Level'])
+test_data['Resistance_Level'] = label_encoder_target.transform(test_data['Resistance_Level'])  # Test data must match training labels
+
+# 6. Split the features (X) and target variable (y) - do not encode the target
+X = data.drop(['Resistance_Level', 'Sample_ID'], axis=1)  # Features (without target and ID columns)
+y = data['Resistance_Level']  # Target variable (Resistance Level)
+
+# 7. Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Normalisasi Data
-scaler = StandardScaler()
-X_train = scaler.fit_transform(X_train)
-X_test = scaler.transform(X_test)
+# 8. Train the Random Forest model
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+model.fit(X_train, y_train)
 
-# Membuat model Random Forest
-random_forest = RandomForestClassifier(random_state=42)
-random_forest.fit(X_train, y_train)
+# 9. Make predictions on the test data
+X_test_data = test_data.drop(['Resistance_Level', 'Sample_ID'], axis=1)  # Prepare test data for prediction
+predictions = model.predict(X_test_data)
 
+# 10. Calculate probabilities for each class (High, Moderate, Low)
+probabilities = model.predict_proba(X_test_data)
 
-# Fungsi untuk memprediksi data baru
-def predict_outcome_random_forest(bacterial_strain, antibiotic, mic_value):
-    # Mengubah data baru menjadi bentuk numerik menggunakan encoder yang sudah dilatih
-    bacterial_strain_encoded = label_encoder_strain.transform([bacterial_strain])[0]
-    antibiotic_encoded = label_encoder_antibiotic.transform([antibiotic])[0]
+# 11. Calculate percentage probabilities for each class
+high_prob = probabilities[:, 0] * 100  # Class 'High'
+moderate_prob = probabilities[:, 1] * 100  # Class 'Moderate'
+low_prob = probabilities[:, 2] * 100  # Class 'Low'
 
-    # Gabungkan data menjadi satu array
-    new_data_encoded = [[bacterial_strain_encoded, antibiotic_encoded, float(mic_value)]]
+# 12. Reverse the encoding for actual and predicted labels
+y_test_actual = label_encoder_target.inverse_transform(test_data['Resistance_Level'])
+y_pred_actual = label_encoder_target.inverse_transform(predictions)
 
-    # Skalakan data baru
-    new_data_scaled = scaler.transform(new_data_encoded)
+# 13. Combine the actual results and predicted results into a new DataFrame
+output = pd.DataFrame({
+    'Actual Resistance Level': y_test_actual,  # Reverse-encoded actual labels
+    'Predicted Resistance Level': y_pred_actual,  # Reverse-encoded predicted labels
+    'High%': high_prob,
+    'Moderate%': moderate_prob,
+    'Low%': low_prob
+})
 
-    # Prediksi hasil menggunakan model
-    prediction = random_forest.predict(new_data_scaled)
+# 14. Save the first output to a CSV file (including predicted resistance levels)
+output.to_csv('predicted_resistance_levels.csv', index=False)
 
-    return prediction[0]
+# 15. Print the first output for review
+print(output)
+
+# 16. Evaluate the model on the split test set (if needed)
+print("Hasilnya")
+y_test_pred = model.predict(X_test)
+print(classification_report(y_test, y_test_pred))
+print(confusion_matrix(y_test, y_test_pred))
+
+# 17. Create a second output CSV for the input features and percentage probabilities
+input_output = pd.DataFrame({
+    'Bacteria_Species': test_data['Bacteria_Species'],
+    'Antibiotic': test_data['Antibiotic'],
+    'Environment': test_data['Environment'],
+    'High%': high_prob,
+    'Moderate%': moderate_prob,
+    'Low%': low_prob
+})
+
+# 18. Save the second output to a CSV file (including input features and probability percentages)
+input_output.to_csv('input_with_probabilities.csv', index=False)
+
+# 19. Print the second output for review
+print(input_output)
