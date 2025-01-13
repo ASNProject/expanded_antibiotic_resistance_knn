@@ -1,5 +1,4 @@
 Sample_ID,Bacteria_Species,Antibiotic,Resistance_Gene_Present,Minimum_Inhibitory_Concentration (MIC),Resistance_Level,Environment,Mutation_Frequency,Treatment_Success
-SAMPLE_1,E. coli,Ciprofloxacin,0,45.53,Moderate,Agricultural,0.367,1
 SAMPLE_2,E. coli,Ciprofloxacin,1,40.81,High,Agricultural,0.517,1
 SAMPLE_3,S. aureus,Vancomycin,0,9.3,Moderate,Community,0.85,1
 SAMPLE_4,K. pneumoniae,Tetracycline,0,58.93,Moderate,Community,0.291,1

@@ -4,7 +4,7 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.neighbors import KNeighborsClassifier
 
 # Membaca data csv
-data = pd.read_csv('data.csv')
+data = pd.read_csv('../data.csv')
 
 # Preprocessing
 label_encoder = {

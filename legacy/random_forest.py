@@ -5,7 +5,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix
 
 # 1. Load dataset
-data = pd.read_csv('data.csv')
+data = pd.read_csv('../data.csv')
 test_data = pd.read_csv('test.csv')
 
 # 2. Combine the training and test datasets for encoding purposes

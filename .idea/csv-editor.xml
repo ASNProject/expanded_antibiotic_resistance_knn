@@ -3,6 +3,20 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="/antibiotic.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/bacteria.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/data.csv">
           <value>
             <Attribute>
@@ -10,7 +24,7 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/data2.csv">
+        <entry key="/environment.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -24,7 +38,35 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/input_with_probabilities_mlp.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/legacy/data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/new_data_predictions1.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/predicted_resistance_levels.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/predicted_resistance_levels_mlp.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -39,13 +81,6 @@
           </value>
         </entry>
         <entry key="/test.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/test2.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
