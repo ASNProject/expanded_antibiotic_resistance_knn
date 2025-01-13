@@ -1,0 +1,21 @@
+{
+  "bacteria_species": [
+    "E. coli",
+    "S. aureus",
+    "S. enterica",
+    "K. pneumoniae",
+    "P. aeruginosa"
+  ],
+  "antibiotics": [
+    "Tetracycline",
+    "Ciprofloxacin",
+    "Amoxicillin",
+    "Vancomycin",
+    "Erythromycin"
+  ],
+  "environments": [
+    "Hospital",
+    "Community",
+    "Agricultural"
+  ]
+}

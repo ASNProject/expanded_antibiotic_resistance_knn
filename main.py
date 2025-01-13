@@ -1,19 +1,111 @@
 import os
+import json
 
 import pandas as pd
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, filedialog
 from PIL import Image, ImageTk
+from train import train
+from test import test
 
-# Read the CSV data
-data_bacteria = pd.read_csv('bacteria.csv')
-data_antibiotic = pd.read_csv('antibiotic.csv')
-data_environment = pd.read_csv('environment.csv')
 
-# Get the unique values from each column
-bacteria_species_options = data_bacteria['Bacteria_Species'].unique().tolist()
-antibiotic_options = data_antibiotic['Antibiotic'].unique().tolist()
-environment_options = data_environment['Environment'].unique().tolist()
+def load_json_data():
+    with open('dropdown.json', 'r') as f:
+        data = json.load(f)
+    return data
+
+
+def button_train():
+    if os.path.exists('training.png'):
+        os.remove('training.png')
+        print("Previous 'training.png' deleted.")
+
+    print("Training Start")
+    result = train()
+    train_result.config(text=result)
+
+    load_image()
+
+
+def button_test():
+    selected_bacteria = bacteria_dropdown.get()
+    selected_antibiotic = antibiotic_dropdown.get()
+    selected_environment = environment_dropdown.get()
+
+    if not selected_bacteria or not selected_antibiotic or not selected_environment:
+        print("Please select all options before testing.")
+        return
+
+    high, moderate, low = test(
+        bacteria=selected_bacteria,
+        antibiotic=selected_antibiotic,
+        environment=selected_environment
+    )
+
+    high_value.config(text=f"{high[0]}")
+    moderate_value.config(text=f"{moderate[0]}")
+    low_value.config(text=f"{low[0]}")
+
+    print(f"Testing completed: High={high[0]}, Moderate={moderate[0]}, Low={low[0]}")
+
+
+def load_image():
+    image_path = "training.png"
+    if os.path.exists(image_path):
+        try:
+            image = Image.open(image_path)
+            # Resize the image
+            image_resized = image.resize((460, 250))
+            # Convert the resized image for Tkinter compatibility
+            photo = ImageTk.PhotoImage(image_resized)
+            # Update the image label
+            image_label.config(image=photo)
+            image_label.image = photo  # Keep a reference to avoid garbage collection
+        except Exception as e:
+            image_label.config(text="Training image cannot be loaded.", image='')
+            print(f"Error loading image: {e}")
+    else:
+        image_label.config(text="Training image not found.", image='')
+
+
+def open_csv():
+    # Open the predicted_resistance_levels_mlp.csv file
+    file_path = 'predicted_resistance_levels_mlp.csv'
+
+    if os.path.exists(file_path):
+        # Load CSV file using pandas
+        df = pd.read_csv(file_path)
+        print(f"CSV file loaded:\n{df}")
+
+        # Optionally display the CSV data in a new window or use it for further operations
+        display_csv_window(df)
+    else:
+        print("CSV file not found!")
+
+
+def display_csv_window(df):
+    # Create a new window to display the CSV content
+    csv_window = tk.Toplevel(root)
+    csv_window.title("CSV Data")
+
+    # Create a Text widget to display the data
+    text_box = tk.Text(csv_window, wrap=tk.WORD, width=80, height=20)
+    text_box.grid(row=0, column=0, padx=10, pady=10)
+
+    # Insert the CSV data into the Text widget
+    text_box.insert(tk.END, df.to_string())
+
+    # Make the Text widget read-only
+    text_box.config(state=tk.DISABLED)
+
+
+# Load JSON data
+data = load_json_data()
+
+# Convert lists from JSON data into pandas Series and get unique values
+bacteria_species_options = pd.Series(data['bacteria_species']).unique().tolist()
+antibiotic_options = pd.Series(data['antibiotics']).unique().tolist()
+environment_options = pd.Series(data['environments']).unique().tolist()
 
 # Create the main window
 root = tk.Tk()
@@ -40,28 +132,14 @@ environment_dropdown = ttk.Combobox(root, values=environment_options, width=16)
 environment_dropdown.grid(row=2, column=1, padx=10, pady=10)
 
 # Create button for train
-train_button = tk.Button(root, text="Train", width=12)
+train_button = tk.Button(root, text="Train", width=12, command=button_train)
 train_button.grid(row=0, column=2, rowspan=1, padx=10, pady=10)
 
-# Check if the image exists and load it
-image_path = "training.png"
-if os.path.exists(image_path):
-    try:
-        image = Image.open(image_path)
-        # Resize the image to 200x200
-        image_resized = image.resize((460, 250))
-        # Convert the resized image for Tkinter compatibility
-        photo = ImageTk.PhotoImage(image_resized)
-        # Create a Label widget to display the image
-        image_label = tk.Label(root, image=photo)
-        image_label.image = photo  # Keep a reference to avoid garbage collection
-    except Exception as e:
-        # Handle cases where the image file exists but cannot be opened
-        image_label = tk.Label(root, text="Training image cannot be loaded.")
-else:
-    # Display a text label if the image is not found
-    image_label = tk.Label(root, text="Training image cannot be loaded.")
+train_result = tk.Label(root, text="")
+train_result.grid(row=1, column=2, rowspan=1, padx=10, pady=10)
 
+# Label gambar
+image_label = tk.Label(root, text="Training image not found.")
 image_label.grid(row=0, column=3, rowspan=5, padx=10, pady=10)
 
 
@@ -77,7 +155,7 @@ def show_selections():
 
 
 # Add a button to show the selected values
-submit_button = tk.Button(root, text="Start Prediction", command=show_selections)
+submit_button = tk.Button(root, text="Start Prediction", command=button_test)
 submit_button.grid(row=3, column=0, columnspan=2, pady=10)
 
 # Label Prediction
@@ -89,18 +167,21 @@ low_label = tk.Label(root, text="LOW (%)")
 low_label.grid(row=12, column=2, padx=10, pady=10, sticky='ew')
 
 # Value Prediction
-high_value = tk.Label(root, text="23", font=("Arial", 36))
+high_value = tk.Label(root, text="0", font=("Arial", 36))
 high_value.grid(row=14, column=0, rowspan=3, padx=20, pady=10, sticky='ew')
-moderate_value = tk.Label(root, text="45", font=("Arial", 36))
+moderate_value = tk.Label(root, text="0", font=("Arial", 36))
 moderate_value.grid(row=14, column=1, rowspan=3, padx=20, pady=10, sticky='ew')
-low_value = tk.Label(root, text="76", font=("Arial", 36))
+low_value = tk.Label(root, text="0", font=("Arial", 36))
 low_value.grid(row=14, column=2, rowspan=3, padx=20, pady=10, sticky='ew')
 
 # Create button for train
-download_label = tk.Label(root, text="Download Prediction CSV")
+download_label = tk.Label(root, text="Open Prediction CSV")
 download_label.grid(row=12, column=3, padx=20, pady=10, sticky='ew')
-download_button = tk.Button(root, text="Download Data", width=12, height=2, font=("Arial", 14))
+download_button = tk.Button(root, text="Open Data", width=12, height=2, font=("Arial", 14), command=open_csv)
 download_button.grid(row=14, column=3, rowspan=3, padx=10, pady=10)
+
+# Muat gambar saat aplikasi dimulai
+load_image()
 
 # Start the Tkinter event loop
 root.mainloop()

@@ -1,5 +1,8 @@
+import os
+
 import pandas as pd
 import joblib
+from datetime import datetime
 
 
 def test(bacteria, antibiotic, environment):
@@ -38,25 +41,33 @@ def test(bacteria, antibiotic, environment):
     probabilities = model.predict_proba(X_test_data)
 
     # 7. Calculate percentage probabilities for each class
-    high_prob = (probabilities[:, 0] * 100).round(1)
-    moderate_prob = (probabilities[:, 1] * 100).round(1)
-    low_prob = (probabilities[:, 2] * 100).round(1)
+    high_prob = (probabilities[:, 0] * 100).round(0).astype(int)
+    moderate_prob = (probabilities[:, 1] * 100).round(0).astype(int)
+    low_prob = (probabilities[:, 2] * 100).round(0).astype(int)
 
     # 8. Reverse encoding for predictions
     # y_pred_actual = label_encoder_target.inverse_transform(predictions)
 
     # 9. Combine the results into a DataFrame
     output = pd.DataFrame({
-        # 'Actual Resistance Level': y_pred_actual,
+        'Timestamp': [datetime.now().strftime('%Y-%m-%d %H:%M:%S')] * len(high_prob),  # Current timestamp for each row
         'High%': high_prob,
         'Moderate%': moderate_prob,
         'Low%': low_prob
     })
 
-    # 10. Print the results
-    print(output)
+    # 10. Check if CSV file exists
+    file_path = 'predicted_resistance_levels_mlp.csv'
+    if os.path.exists(file_path):
+        # If file exists, load it and append new data
+        existing_data = pd.read_csv(file_path)
+        updated_data = pd.concat([existing_data, output], ignore_index=True)  # Pass as a list
+        updated_data.to_csv(file_path, index=False)  # Save updated data back to CSV
+    else:
+        # If file doesn't exist, create a new one with the output
+        output.to_csv(file_path, index=False)
 
-    # 11. Save the results to a CSV file
-    output.to_csv('predicted_resistance_levels_mlp.csv', index=False)
+    # 11. Print the results
+    print(output)
 
     return high_prob, moderate_prob, low_prob
