@@ -9,10 +9,17 @@ from train import train
 from test import test
 
 
-def load_json_data():
-    with open('dropdown.json', 'r') as f:
-        data = json.load(f)
-    return data
+def load_json_data(filename):
+    try:
+        with open(filename, 'r') as f:
+            data = json.load(f)
+        return data
+    except FileNotFoundError:
+        print(f"File {filename} tidak ditemukan.")
+        return {}
+    except json.JSONDecodeError as e:
+        print(f"Error decoding JSON di file {filename}: {e}")
+        return {}
 
 
 def button_train():
@@ -99,13 +106,18 @@ def display_csv_window(df):
     text_box.config(state=tk.DISABLED)
 
 
-# Load JSON data
-data = load_json_data()
+# # Load JSON data
+# data = load_json_data()
 
-# Convert lists from JSON data into pandas Series and get unique values
-bacteria_species_options = pd.Series(data['bacteria_species']).unique().tolist()
-antibiotic_options = pd.Series(data['antibiotics']).unique().tolist()
-environment_options = pd.Series(data['environments']).unique().tolist()
+# Load file JSON
+bacteria_species_data = load_json_data('bacteria_species.json')
+antibiotics_data = load_json_data('antibiotics.json')
+environments_data = load_json_data('environments.json')
+
+# Konversi ke daftar unik
+bacteria_species_options = pd.Series(bacteria_species_data.get('bacteria_species', [])).unique().tolist()
+antibiotic_options = pd.Series(antibiotics_data.get('antibiotics', [])).unique().tolist()
+environment_options = pd.Series(environments_data.get('environments', [])).unique().tolist()
 
 # Create the main window
 root = tk.Tk()
@@ -116,19 +128,19 @@ root.resizable(False, False)
 # Create a Label and Dropdown for Bacteria_Species
 bacteria_label = tk.Label(root, text="Select Bacteria Species:")
 bacteria_label.grid(row=0, column=0, padx=10, pady=10, sticky='w')
-bacteria_dropdown = ttk.Combobox(root, values=bacteria_species_options, width=16)
+bacteria_dropdown = ttk.Combobox(root, values=bacteria_species_options, width=16, font=("Arial", 18))
 bacteria_dropdown.grid(row=0, column=1, padx=10, pady=10)
 
 # Create a Label and Dropdown for Antibiotic
 antibiotic_label = tk.Label(root, text="Select Antibiotic:")
 antibiotic_label.grid(row=1, column=0, padx=10, pady=10, sticky='w')
-antibiotic_dropdown = ttk.Combobox(root, values=antibiotic_options, width=16)
+antibiotic_dropdown = ttk.Combobox(root, values=antibiotic_options, width=16, font=("Arial", 18))
 antibiotic_dropdown.grid(row=1, column=1, padx=10, pady=10)
 
 # Create a Label and Dropdown for Environment
 environment_label = tk.Label(root, text="Select Environment:")
 environment_label.grid(row=2, column=0, padx=10, pady=10, sticky='w')
-environment_dropdown = ttk.Combobox(root, values=environment_options, width=16)
+environment_dropdown = ttk.Combobox(root, values=environment_options, width=16, font=("Arial", 18))
 environment_dropdown.grid(row=2, column=1, padx=10, pady=10)
 
 # Create button for train

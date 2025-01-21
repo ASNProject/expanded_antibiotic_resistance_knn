@@ -1,0 +1,7 @@
+{
+  "environments": [
+    "Hospital",
+    "Community",
+    "Agricultural"
+  ]
+}
